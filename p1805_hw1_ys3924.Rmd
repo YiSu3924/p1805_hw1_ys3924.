@@ -48,3 +48,19 @@ ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)
 ggsave("penguins_scatterplot.png")
 ```
 
+
+## Create the data frame
+
+Create the data frame by using the tibble function.
+```{r}
+set.seed(1805)
+df = tibble(
+  sample = rnorm(10, 0, 1),
+  vec_logical = sample > 0,
+  vec_char = c("this", "is", "ds", "class", "for", "master", "student", "in", "c", "u"),
+  vec_factor = factor(sample(c("low", "med", "high"), 10, replace = TRUE))
+)
+# Print the data frame
+df
+```
+
