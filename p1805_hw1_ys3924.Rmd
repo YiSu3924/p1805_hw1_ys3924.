@@ -55,12 +55,22 @@ Create the data frame by using the tibble function.
 ```{r}
 set.seed(1805)
 df = tibble(
-  sample = rnorm(10, 0, 1),
-  vec_logical = sample > 0,
+  vec_sample = rnorm(10, 0, 1),
+  vec_logical = vec_sample > 0,
   vec_char = c("this", "is", "ds", "class", "for", "master", "student", "in", "c", "u"),
   vec_factor = factor(sample(c("low", "med", "high"), 10, replace = TRUE))
 )
 # Print the data frame
 df
 ```
+
+## Take the mean of a variable in a dataframe
+```{r, warning=FALSE}
+mean(pull(df, vec_sample))
+mean(pull(df, vec_logical))
+mean(pull(df, vec_char))
+mean(pull(df, vec_factor))
+```
+
+When taking the mean of each variable in the dataframe, the numeric and logical variables work. However, the character vector and factor vector do not work, because it produces NA values.
 
