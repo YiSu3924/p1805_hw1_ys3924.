@@ -8,3 +8,11 @@ output: github_document
 ```{r setup, message=FALSE}
 library(tidyverse)
 ```
+
+## Read in penguins data
+
+Read in penguins dataset
+
+```{r}
+data("penguins", package = "palmerpenguins")
+```
