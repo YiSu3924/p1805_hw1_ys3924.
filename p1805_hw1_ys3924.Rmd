@@ -36,4 +36,15 @@ penguins_species <- unique(pull(penguins, species))
 The penguins dataset contains information of different penguins species: `r penguins_species`, with `r num_rows` rows and `r num_columns` columns. The key variables are `r key_variables`. The mean flipper length is `r mean_flipper_length`.
 
 
+## Create the scatterplot
+
+Use ggplot to create the scatterplot.
+
+```{r, warning=FALSE, message=FALSE}
+ggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, color = species)) +
+  geom_point() +
+  labs(title = "Flipper Length vs Bill Length")
+# Saving the scatterplot
+ggsave("penguins_scatterplot.png")
+```
 
